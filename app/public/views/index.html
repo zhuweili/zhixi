@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Facebook Pages!</title>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+
+    </script>
+
+
+
+
+
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-route.js"></script>
+    <script src="../js/angular-resource.js"></script>
+    <script src="../js/app_index/app_index.js"></script>
+    <script src="../js/app_index/index_controller.js"></script>
+</head>
+<body ng-app="indexApp">
+
+<div ng-controller="index_controller" >
+
+
+
+
+
+
+    <div class="container" >
+        <br><br/><br><br/><br><br/>
+        <div class="row">
+
+            <div class="col-6">
+
+                <div class="list-group">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="post in recent_list track by $index" >
+                        content: {{post.content}}&nbsp;&nbsp;&nbsp;&nbsp;id: {{post.id}}
+                        <span class="badge badge-primary badge-pill">{{post.timestamp}}</span>
+                    </li>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6">
+
+                <div class="list-group">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="post in hot_list track by $index" >
+                        content: {{post.content}}&nbsp;&nbsp;&nbsp;&nbsp;id: {{post.id}}
+                        <span class="badge badge-primary badge-pill">{{post.visited}}</span>
+                    </li>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-12">
+                <br><br/>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="content_to_post"></textarea>
+                    <p></p>
+                    <button type="button" class="btn btn-outline-primary float-right" ng-click="post_list()">Post</button>
+                </div>
+                <br><br/>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <input type="number" class="float-left" ng-model="id_to_get" placeholder="id">
+                    <p></p>
+                    <button type="button" class="btn btn-outline-primary float-right" ng-click="get_list()">Get</button>
+                </div>
+                <p>{{list_got}}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
